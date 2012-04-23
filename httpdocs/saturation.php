@@ -1,9 +1,8 @@
 <?php
 header("Content-Type: image/svg+xml");
-//require_once("phar:///usr/bin/dead.phar/loader.php");
-//require_once("phar:///usr/bin/dead.phar/task/SaturationGraphTask.php");
-require_once '/home/ontw/dead/toolset/loader.php';
-require_once '/home/ontw/dead/toolset/task/SaturationGraphTask.php';
+$dir = dirname(__DIR__);
+require_once("phar://$dir/dead.phar/loader.php");
+require_once("phar://$dir/dead.phar/task/SaturationGraphTask.php");
 
 if(isset($_GET['path'])) {
   $path = $_GET['path'];
