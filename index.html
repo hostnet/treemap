@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Hostnet Dead Code Elimination</title>
+<script type="text/javascript" src="js/d3.js"></script>
+<link type="text/css" rel="stylesheet" href="css/treemap.css" />
+</head>
+<body>
+	<div id="index">
+		<ul>
+			<li><a href="build.php">Nightly Build Time Graphs</a></li>
+			<li><a href="#" onClick="doLoad('aurora')">Aurora</a></li>
+			<li><a href="#" onClick="doLoad('dce')">Aurora before DCE</a></li>
+			<li><a href="#" onClick="doLoad('my2')">MyHostnet</a></li>
+			<li><a href="#" onClick="doLoad('ontrack')">Bestelmodule</a></li>
+			<li><a href="#" onClick="doLoad('hft2')">HFT2</a></li>
+			<li><a href="#" onClick="doLoad('hft3')">HFT3</a></li>
+			<li><a href="#" onClick="doLoad('hft3stripped')">HFT3
+					Stripped</a></li>
+			<li><a href="#" onClick="doLoad('mailbase')">mailbase</a></li>
+			<li><a href="#" onClick="doLoad('symhostnet2')">symhostnet2</a></li>
+			<li><a href="#" onClick="doLoad('phpmyadmin')">phpmyadmin</a></li>
+			<li><a href="#" onClick="doLoad('test')">test</a></li>
+		</ul>
+	</div>
+	<div id="treemap">
+		<div id="crumb">
+			<span id="current_path"></span><span id="current_file"></span>
+		</div>
+		<div id="chart" oncontextmenu="return false;"></div>
+		<div id="color_scale">
+			<div id="color_start">0%</div>
+			<div id="color_gradient">1% - 99% unused</div>
+			<div id="color_end">100%</div>
+		</div>
+		<table id="table">
+			<thead>
+				<tr>
+					<th class="sortable" sort="path" sort_type="string">path <img src="img/empty.gif" /></th>
+					<th class="sortable" sort="pct_dead">% † <img src="img/empty.gif" /></th>
+					<th class="sortable" sort="dead_count"># †<img src="img/empty.gif" /></th>
+					<th class="sortable" sort="file_count"># .php <img src="img/empty.gif" /></th>
+					<th class="sortable" sort="hit_count"># hits <img src="img/empty.gif" /></th>
+					<th class="sortable" sort="changed_at" sort_type="string">age <img src="img/empty.gif" /></th>
+					<th class="sortable" sort="first_hit" sort_type="string">hit time <img src="img/empty.gif" /></th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+
+		<img id="saturation"></img>
+		<script type="text/javascript" src="js/treemap.js"></script>
+	</div>
+</body>
+</html>
