@@ -1,0 +1,12 @@
+Example useage of the dead code elimination toolbox to
+create a tree map visualization.
+
+Please add a config.yml file in the root directory with
+the following contents:
+
+options:
+  dsn: mysql:host=servernamehere;dbname=databasenamehere
+  username: usernamehere
+  password: passwordhere
+
+Then run make to get all dependencies.
